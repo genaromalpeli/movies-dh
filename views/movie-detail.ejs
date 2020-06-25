@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= movie.title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+    <a href="/"><button>Volver a la home</button></a>
+    <h1><%= movie.title %></h1>
+    <h1><%= moment(movie.release_date).format("DD-MM-YYYY") %></h1>
+    <a href="/movies/<%= movie.id %>/edit"><button>Editar movie</button></a>
+    <form action="/movie/delete/<%= movie.id %>" method="POST">
+      <button>Eliminar pelicula</button>
+    </form>
+    <p>Genero: <a href="/genre/<%= movie.genre.id %>"><%= movie.genre.name %></p></a>
+    <p>Los actores son:</p>
+    <% for (let i = 0; i < movie.actors.length; i++) {%>
+    <ul>
+      <li>
+        <a href="/actor/<%= movie.actors[i].id %>"><%= movie.actors[i].first_name %> <%= movie.actors[i].last_name %></a>
+      </li>
+    </ul>
+    <% } %>
+    <a href="/movies/<%= movie.id %>/actor/create"
+      ><button>Agregar actor</button></a
+    >
+  </body>
+</html>

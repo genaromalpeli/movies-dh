@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movies</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+    <h1>Movies</h1>
+    <ul>
+      <% for( let movie of movies ) { %>
+      <li>
+        <a href="/movies/<%= movie.id %>">
+          <%= movie.title %>
+        </a>
+      </li>
+      <% } %>
+    </ul>
+    <h2>Crea tu propia pelicula :)</h2>
+    <a href="/movies/create">
+      <button>Agregar Movie</button>
+    </a>
+  </body>
+</html>

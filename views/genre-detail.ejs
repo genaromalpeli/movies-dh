@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= genres.title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+    <a href="/"><button>Volver a la home</button></a>
+    <h1><%= genres.name %></h1>
+    <p>Peliculas que tienen este genero:</p>
+    <% for (let i = 0; i < genres.movie.length; i++) {%>
+    <ul>
+      <li>
+        <%= genres.movie.title %>
+      </li>
+    </ul>
+    <% } %>
+  </body>
+</html>
